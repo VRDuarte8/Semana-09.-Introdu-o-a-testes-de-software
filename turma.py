@@ -9,8 +9,10 @@ class Turma:
       self.turma.append(i);
       if((self.menorNota == None) or (self.menorNota.nota > i.nota)):
         self.menorNota = i;
-      elif((self.maiorNota == None) or (self.menorNota.nota < i.nota)):
-        self.maiorNota = i;                 
+      if((self.maiorNota == None) or (self.maiorNota.nota < i.nota)):
+        self.maiorNota = i;
+      if((i.nota < 0) or (i.nota > 10)):
+        sys.exit('Entrada de nota inválida')
 
   def mostrarAlunos(self):  
     print('Quantidade de alunos:', len(self.turma));
